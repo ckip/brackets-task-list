@@ -1,0 +1,6 @@
+#task-list-toolbar {
+	display:inline-block;
+	background-image:url('../img/task-list.svg');
+	background-size:100%;
+	opacity:0.65;	
+}
