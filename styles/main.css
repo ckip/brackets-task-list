@@ -4,3 +4,47 @@
 	background-size:100%;
 	opacity:0.65;	
 }
+.items {
+  overflow-y: auto;
+  height: 220px;
+}
+.items tr.clone {
+  display: none;
+}
+.items td {
+  padding: 10px 0;
+}
+.items td input[type=text] {
+  width: 100%;
+  margin-bottom: 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #202020;
+  border-radius: 0;
+}
+.items td input[type=text]:focus {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #555;
+  border-radius: 0;
+}
+.items td input[type=text]:disabled {
+  text-decoration: line-through;
+}
+.items td input[type=text]::-webkit-input-placeholder {
+  color: #555;
+}
+.items td.input {
+  padding-right: 20px;
+}
+.items td.remove {
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.items td.remove:hover {
+  color: #ccc;
+}
+.items tr.addRow td {
+  padding-right: 20px;
+}
