@@ -6,7 +6,7 @@
 }
 .items {
   overflow-y: auto;
-  height: 220px;
+  height: 250px;
 }
 .items tr.clone {
   display: none;
