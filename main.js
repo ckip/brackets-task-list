@@ -51,6 +51,7 @@ define(function (require, exports, module) {
             var $tr = $(this).parent();
             $tr.remove();
         });
+		
 	}
 	
 	function handleOk() {
@@ -71,13 +72,14 @@ define(function (require, exports, module) {
 		var $dialogInstance = $(".task-list-dialog.instance");
 		if(! $dialogInstance.find('.items .new').find('input[type=text]').val()) return;
 		
-		var $newRow = $dialogInstance.find('.items .clone').clone();
+		var $newRow = $dialogInstance.find('.items .clone').clone(true);
 		
 		var newTaskItem = $dialogInstance.find('.items .new');
 		newTaskItem.removeClass('new');
+		newTaskItem.find('.add-button').remove(); 
 		newTaskItem.find('td.checkbox-completed').prepend('<input type="checkbox">');
 		newTaskItem.append('<td width="50" align="center" valign="middle" class="remove">&times;</td>');
-		$newRow.insertAfter($('.items tr.clone')).removeClass('clone').addClass('new').show();		
+		$newRow.insertAfter($('.items tr.clone')).removeClass('clone').addClass('new').show();	
 	}
 	
 	function loadTasks() {
@@ -93,14 +95,15 @@ define(function (require, exports, module) {
 						var $dialogInstance = $(".task-list-dialog.instance");
 						
 						$.each(tasks, function(index, value){
-							var $newRow = $dialogInstance.find('.items .clone').clone();
+							var $newRow = $dialogInstance.find('.items .clone').clone(true);
 							
 							$newRow.find('input[type=text]').val(value.description);
 							$newRow.find('input[type=text]').prop('disabled', value.completed);
 							$newRow.find('input[type=checkbox]').prop('checked', value.completed);
+							$newRow.find('.add-button').remove(); 
 							$newRow.find('td.checkbox-completed').prepend('<input type="checkbox">');
 							$newRow.append('<td width="50" align="center" valign="middle" class="remove">&times;</td>');
-							$newRow.insertBefore($dialogInstance.find('tr.addRow')).removeClass('clone');
+							$newRow.insertAfter('#task-table tbody>tr:last').removeClass('clone');
 						});
 					}
 				});
