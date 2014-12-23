@@ -99,9 +99,9 @@ define(function (require, exports, module) {
 							
 							$newRow.find('input[type=text]').val(value.description);
 							$newRow.find('input[type=text]').prop('disabled', value.completed);
-							$newRow.find('input[type=checkbox]').prop('checked', value.completed);
 							$newRow.find('.add-button').remove(); 
 							$newRow.find('td.checkbox-completed').prepend('<input type="checkbox">');
+							$newRow.find('input[type=checkbox]').prop('checked', value.completed);
 							$newRow.append('<td width="50" align="center" valign="middle" class="remove">&times;</td>');
 							$newRow.insertAfter('#task-table tbody>tr:last').removeClass('clone');
 						});
@@ -119,9 +119,10 @@ define(function (require, exports, module) {
 		$dialogInstance.find('.items tr.item').each(function(index, value){
 			if($(this).hasClass('clone')){ return; }
 			if(!$(this).find('input[type=text]').val()){ return; }
-			
+
 			tasks.push({
-				'description': $(this).find('input[type=text]').val()
+				'description': $(this).find('input[type=text]').val(),
+				'completed':$(this).find('input[type=checkbox]').is(':checked')
 			});
 		});
 		
