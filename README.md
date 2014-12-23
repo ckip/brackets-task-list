@@ -1,7 +1,7 @@
 Brackets Task List
 ==================
 
-Adobe Brackets Extension for managing development tasks. This extension allows you to add tasks for each and every project separately. This extension is inspired by 
+Adobe [Brackets](http://brackets.io/ "Brackets") Extension for managing development tasks. This extension allows you to add tasks for each and every project separately. This extension is inspired by 
 [Brackets-Tasks](https://github.com/crot4lus/Brackets-Tasks "Brackets-Tasks")
 
 ## Screenshot
