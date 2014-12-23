@@ -1,9 +1,9 @@
 {
     "name": "task-list",
     "title": "Task List",
-    "description": "Adobe Brackets Extension for managing development tasks",
+    "description": "Brackets Extension for managing development tasks",
     "homepage": "https://github.com/ckip/brackets-task-list",
-    "version": "0.0.1",
+    "version": "1.0.0",
 	"author": "ckip (https://github.com/ckip)",
 	"keywords": [
 		"todo",
